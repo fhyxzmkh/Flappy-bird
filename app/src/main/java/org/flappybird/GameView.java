@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -462,7 +463,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
         gameStatus = GAME_READY;
         score = 0;
 
-        gameListener.gameReady();
+        new Handler().postDelayed(() -> {
+            if (gameListener != null) {
+                gameListener.gameReady();
+            }
+        }, 50);
 
     }
 }
