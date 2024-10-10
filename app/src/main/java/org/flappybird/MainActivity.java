@@ -2,7 +2,6 @@ package org.flappybird;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void gameReady() {
-                runOnUiThread(() -> ((RelativeLayout)findViewById(R.id.relative)).setVisibility(View.GONE));
+                runOnUiThread(() -> ((RelativeLayout) findViewById(R.id.relative)).setVisibility(View.GONE));
             }
         });
 

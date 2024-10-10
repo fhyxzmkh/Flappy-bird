@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 
@@ -126,22 +125,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
 
         new Thread(this).start(); // 开启绘制线程
     }
-
-//    public void reSet() {
-//        BirdSpinData = 0;
-//        bird.setX(ViewWidth / 2 - bp_bird0.getWidth() / 2);
-//        bird.setY(ViewHeight / 2);
-//        isDown = false;
-//        CreateObstacleTime = 0;
-//        obstacles = new ArrayList<>();
-//        changeBitmapTime = 0;
-//        gameStatus = GAME_READY;
-//        score = 0;
-//
-//        if (gameListener != null) {
-//            gameListener.gameReady();
-//        }
-//    }
 
     private Body[] createGrounds() {
         Body body1 = new Body(bp_land, 0, ViewHeight - bp_land.getHeight(), bp_land.getWidth(), bp_land.getHeight());
@@ -444,14 +427,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
         return super.onTouchEvent(event);
     }
 
-    interface GameListener {
-        void addScore(int score);
-
-        void gameOver();
-
-        void gameReady();
-    }
-
     public void reSet() {
         BirdSpinData = 0;
         bird.setX(ViewWidth / 2 - bp_bird0.getWidth() / 2);
@@ -469,6 +444,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
             }
         }, 50);
 
+    }
+
+    interface GameListener {
+        void addScore(int score);
+
+        void gameOver();
+
+        void gameReady();
     }
 }
 
