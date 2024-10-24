@@ -22,6 +22,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <TextView
+        android:id="@+id/ctime"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="18sp"
+        android:paddingTop="40dp"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/clocation"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="18sp"
+        android:paddingTop="70dp"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+
     <RelativeLayout
         android:id="@+id/relative"
         android:visibility="gone"
